@@ -9,3 +9,5 @@ class createCommentController{
         return Response.json(result)
     }
 }
+
+export { createCommentController }
