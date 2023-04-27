@@ -6,7 +6,7 @@ interface Icomment{
     quantidade: string
 }
 
-class getCommentsServices{
+class PageCommentService{
     async execute({pagina, quantidade, busca}: Icomment){
         const comments = await prismaClient.visita.findMany({
             skip: (Number(pagina) - 1) * Number(quantidade),
@@ -15,4 +15,4 @@ class getCommentsServices{
         return comments
     }
 }
-export { getCommentsServices }
+export { PageCommentService }
