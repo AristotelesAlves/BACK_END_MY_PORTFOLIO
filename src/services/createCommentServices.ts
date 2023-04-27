@@ -8,15 +8,18 @@ interface IcreateComment{
     image: string;
     message: string;
     name: string;
+    instagram: string
 }
 
 class createCommentServices{
-    async execute({image, message, name}: IcreateComment){
+    async execute({image, message, name, instagram}: IcreateComment){
         const createComment = await prismaClient.visita.create({
             data:{
                 image,
                 message,
-                name
+                name,
+                authorize: false,
+                instagram,
             }
         })
 

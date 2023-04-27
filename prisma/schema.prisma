@@ -11,15 +11,16 @@ datasource db {
 }
 
 model visita {
-  id      String   @id @default(uuid())
-  name    String  
-  image   String
-  data    DateTime @updatedAt
-  message String
+  id        String   @id @default(uuid())
+  name      String
+  image     String
+  instagram String
+  authorize Boolean
+  data      DateTime @updatedAt
+  message   String
 }
 
 model post {
-  id Int @id @default(autoincrement())
+  id   Int @id @default(autoincrement())
   like Int
-  
 }
