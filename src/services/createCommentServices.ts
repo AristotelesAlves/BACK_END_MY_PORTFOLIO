@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../prisma";
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import handlebars from 'handlebars';
 
 interface IcreateComment{
     image: string;
@@ -22,7 +20,6 @@ class createCommentServices{
                 instagram,
             }
         })
-
 
         const transport = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -52,8 +49,13 @@ class createCommentServices{
                         ${message}
                     </p>
                     <div>
-                        <a href="https://www.google.com/search?q=html+css+outlook+email&oq=html+css+outlook&aqs=edge.0.0i19i512j69i57j0i15i19i22i30j0i19i22i30l6.6521j0j4&sourceid=chrome&ie=UTF-8">Negar</a>
-                        <a href="https://stackoverflow.com/questions/5861714/formatting-html-email-for-outlook" style="padding-left:10px;">Autorizar</a>
+                        <a href="${process.env.API_URL}/refused/${createComment.id}">
+                            Negar
+                        </a>
+                        <a href="${process.env.API_URL}/authorize/${createComment.id}" 
+                         style="padding-left:20px;">
+                            Autorizar
+                        </a>
                     </div>
                 </div>
             </div>
