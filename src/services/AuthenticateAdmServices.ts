@@ -30,7 +30,7 @@ class AuthenticateAdmServices{
             user:{
                 nome: user.name,
                 senha: user.password,
-                id: user.id,
+                id: user. id,
             }
         },
         process.env.JWT_SECRET_KEY,

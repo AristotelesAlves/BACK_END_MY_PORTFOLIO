@@ -9,3 +9,5 @@ class AuthenticateAdmController{
         return res.json(result)
     }
 }
+
+export { AuthenticateAdmController }
