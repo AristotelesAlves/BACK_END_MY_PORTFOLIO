@@ -21,18 +21,10 @@ model visita {
 }
 
 model post {
-  id          Int     @id @default(autoincrement())
-  title       String
-  description String
-  image       String
-  github      String
-  website     String
-  like        Int
-  data        DateTime @updatedAt
-}
-
-model adm {
-  id String @id @default(uuid())
-  name     String @unique
-  password String @unique
+  id   Int      @id @default(autoincrement())
+  img  String
+  bio  String
+  code String
+  demo String
+  data DateTime @updatedAt
 }
