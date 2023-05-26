@@ -9,6 +9,9 @@ interface Icomment{
 class PageCommentService{
     async execute({pagina, quantidade, busca}: Icomment){
         const comments = await prismaClient.visita.findMany({
+            orderBy:{
+                id: "desc"
+            },
             where:{
                 authorize: true
             },
