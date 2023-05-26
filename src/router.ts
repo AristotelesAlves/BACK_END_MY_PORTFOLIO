@@ -4,10 +4,16 @@ import { createCommentController } from "./controller/createCommentController";
 import { getAllcommentsController } from "./controller/getAllcommentsController";
 import { RefusedCommentController } from "./controller/RefusedCommentController";
 import { AuthorizeCommentController } from "./controller/AuthorizeCommentController";
+import { GetPostController } from "./controller/GetpostController";
+import { CreatePostController } from "./controller/CreatePostController";
 
 const router = Router()
 
 router.get('/comments', new PageCommentController().handle)
+
+router.get('/post', new GetPostController().handle)
+
+router.post('/CreatPost', new CreatePostController().handle)
 
 router.get('/all-comments', new getAllcommentsController().handle)
 
