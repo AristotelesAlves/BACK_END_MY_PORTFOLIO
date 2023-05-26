@@ -6,6 +6,7 @@ import { RefusedCommentController } from "./controller/RefusedCommentController"
 import { AuthorizeCommentController } from "./controller/AuthorizeCommentController";
 import { GetPostController } from "./controller/GetpostController";
 import { CreatePostController } from "./controller/CreatePostController";
+import { DeletePostController } from "./controller/DeletePostController";
 
 const router = Router()
 
@@ -20,6 +21,8 @@ router.get('/all-comments', new getAllcommentsController().handle)
 router.put('/authorize/:id', new AuthorizeCommentController().handle)
 
 router.delete('/refused/:id', new RefusedCommentController().handle)
+
+router.delete('/deletPost/:id', new DeletePostController().handle)
 
 router.post('/comment', new createCommentController().handle)
 
