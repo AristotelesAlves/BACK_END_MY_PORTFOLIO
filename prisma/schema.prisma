@@ -14,17 +14,16 @@ model visita {
   id        String   @id @default(uuid())
   name      String
   image     String
-  instagram String
-  authorize Boolean
+  star      Int
   data      DateTime @updatedAt
-  message   String
 }
 
 model post {
-  id   Int      @id @default(autoincrement())
-  img  String
-  bio  String
-  code String
-  demo String
-  data DateTime @updatedAt
+  id    Int      @id @default(autoincrement())
+  title String
+  img   String
+  bio   String
+  code  String
+  demo  String
+  data  DateTime @updatedAt
 }

@@ -3,9 +3,9 @@ import { createCommentServices } from "../services/createCommentServices";
 
 class createCommentController{
     async handle(req:Request, res: Response){
-        const {name, message, image, instagram} = req.body
+        const {name, image,star} = req.body
         const services = new createCommentServices();
-        const result = await services.execute({name, message, image, instagram})
+        const result = await services.execute({name, image,star})
         return res.json(result)
     }
 }
