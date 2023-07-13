@@ -13,7 +13,7 @@ class createCommentServices{
             data:{
                 name,
                 image,
-                star,
+                star: Number(star),
             }
         })
 
